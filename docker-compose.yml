@@ -28,11 +28,7 @@ services:
       - DB_PASSWORD=$DB_PASSWORD
       - DB_NAME=express-docker
     ports:
-      - "3000:80"
-    healthcheck:
-      test: ["CMD", "curl", "http://localhost"]
-      timeout: 20s
-      retries: 5
+      - "3307:3306"
     depends_on:
       mysql:
         condition: service_healthy
