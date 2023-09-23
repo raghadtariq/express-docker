@@ -33,8 +33,10 @@ jobs:
     - name: configure docker host
       uses: khaledez/configure-docker-host@v1
       with:
-        host: 18.170.38.203
+        host: 13.48.1.10
         user: github
         ssh-private-key: ${{ secrets.DEPLOYMENT_KEY }}
     - name: deploy
       run: docker compose -f docker-compose-prod.yml up -d
+    - name: print logs
+      run: docker compose logs
